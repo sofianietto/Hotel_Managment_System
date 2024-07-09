@@ -1,5 +1,4 @@
 import './App.css'
-import 'antd/dist/reset.css';
 import { Route, Routes } from 'react-router-dom';
 import Habitaciones from './views/Habitaciones';
 import Reservas from './views/Reservas';

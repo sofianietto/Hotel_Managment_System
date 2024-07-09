@@ -2,15 +2,16 @@ import useAxios from "../hooks/useAxios"
 import EliminarHabitacion from "./EliminarHabitacion"
 import Swal from 'sweetalert2'
 import Modal from "./Modal"
+import '../css/habitaciobes.css'
 
 const ListaHabitaciones = () => {
 
-    const {data, isLoading, error, setData} = useAxios('http://localhost:8000/api/habitacion')
-    if(error){
+    const { data, isLoading, error, setData } = useAxios('http://localhost:8000/api/habitacion')
+    if (error) {
         return <div>{error.message}</div>
     }
 
-    if(isLoading){
+    if (isLoading) {
         return <div>Loading...</div>
     }
 
@@ -27,32 +28,34 @@ const ListaHabitaciones = () => {
 
     return (
         <div>
-            <h1>Lista de Habitaciones</h1>
-            <table className="mt-4 table table-striped table-hover table-bordered">
-                <thead>
-                    <tr>
-                        <th>Numero</th>
-                        <th>Tipo</th>
-                        <th>Descripcion</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data.map((habitacion) => (
-                        <tr key={habitacion._id}>
-                            <td>{habitacion.numero}</td>
-                            <td>{habitacion.tipo}</td>
-                            <td>{habitacion.descripcion}</td>
-                            <td>
-                            <EliminarHabitacion habitacionId={habitacion._id} successCallback={successEliminar} />
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            <main className="habitaciones">
+                <section className="habitaciones-header">
+                    <h1>Lista de Habitaciones</h1>
+                </section>
 
+                <div className="habitaciones-body">
+                    {data.map((habitacion) => (
+                        <div className="containermain">
+                            <div className="containeruno">
+                                <div className="numero">
+                                    <p>{habitacion.numero}</p>
+                                </div>
+                                <div className="tipo">
+                                    <p>{habitacion.tipo}</p>
+                                </div>
+                            </div>
+                            <div className="containerdos">
+                                <p>{habitacion.descripcion}</p>
+                            </div>
+                            <div className="containertres">
+                                <EliminarHabitacion habitacionId={habitacion._id} successCallback={successEliminar} />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </main>
         </div>
-        
+
     )
 }
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 :root {
     --PrimaryColor: hsl(137, 64%, 47%);
     --HoverColor: hsl(137, 67%, 39%);
@@ -8,40 +10,39 @@
     --greyBg: hsl(0, 0%, 96%);
     --greyText: hsl(190, 190, 190);
     --InputColor: hsl(330, 12%, 97%);
+
 }
 
-.navBar {
-    height: 85px;
+.navBarDos {
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--greyBg);
+    backdrop-filter: blur(10px);
 }
 
-.navBar > .nav-logo {
-    color: var(--blackColor);
-    font-weight: 700;
-    font-size: 25px;
-    font-family: 'Times New Roman', Times, serif;
+.navBarDos > .nav-logo {
+    color: var(--PrimaryColor);
+    font-size: 30px;
     margin: 15px;
     align-items: center;
     justify-content: center;
 }
 
 
-.navBar > .nav-items > .navlink {
+.navBarDos > .nav-items > .navlink {
     color: var(--blackColor);
-    font-size: 19px;
+    font-size: 15px;
     font-weight: 500;
     text-decoration: none;
     margin: 15px;
 }
 
-.navBar > .nav-items > .navlink:hover {
+.navBarDos > .nav-items > .navlink:hover {
     opacity: 1;
 }
 
-.navBar > .nav-items > .navlink::before {
+.navBarDos > .nav-items > .navlink::before {
     content: "";
     position: absolute;
     left: 0;
@@ -52,13 +53,13 @@
     transition: all .45s;
 }
 
-.navBar > .nav-items > .navlink:hover::before {
+.navBarDos > .nav-items > .navlink:hover::before {
     width: 100%;
 }
 
 @media (max-width: 746px) {
 
-    .navBar>.nav-items {
+    .navBarDos>.nav-items {
         position: absolute;
         top: 60px;
         display: flex;
@@ -71,11 +72,11 @@
         transition: all .45s;
     }
 
-    .navBar>.nav-items>.navlink::before {
+    .navBarDos>.nav-items>.navlink::before {
         background: transparent;
     }
 
-    .navBar>.nav-items.open{
+    .navBarDos>.nav-items.open{
         transform: translateX(0);
     }
 
@@ -134,5 +135,5 @@
 
 .contenido {
     position: relative;
-    margin: 8rem 2rem;
+    margin: 2rem 2rem;
 }

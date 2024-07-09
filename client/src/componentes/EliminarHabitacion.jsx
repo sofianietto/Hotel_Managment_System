@@ -1,6 +1,7 @@
 import axios from "axios"
 import Swal from 'sweetalert2'
 import PropTypes from 'prop-types';
+import '../css/habitaciobes.css'
 
 const EliminarHabitacion = ({ habitacionId, successCallback }) => {
 
@@ -26,7 +27,7 @@ const EliminarHabitacion = ({ habitacionId, successCallback }) => {
     }
 
     return (
-        <button onClick={() => EliminarHabitacion(habitacionId)} className="btn btn-outline-success btn-sm">Eliminar habitacion</button>
+        <button onClick={() => EliminarHabitacion(habitacionId)} className="BotonEliminar">Eliminar</button>
     )
 }
 

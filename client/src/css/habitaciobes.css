@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --PrimaryColor: hsl(137, 64%, 47%);
+    --HoverColor: hsl(137, 67%, 39%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyBg: hsl(0, 0%, 96%);
+    --greyText: hsl(190, 190, 190);
+    --InputColor: hsl(330, 12%, 97%);
+
+}
+ 
+.containeruno{
+    display: flex;
+    padding: 1rem;
+}
+
+.containerdos{
+    padding: 1rem;
+}
+
+.tipo{
+    padding-left: 20px;
+}
+
+.containertres{
+    padding: 1rem;
+}
+
+.containermain{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 63px 63px 63px 63px;
+    box-shadow: 10px 10px 46px 0px rgba(150,150,150,0.30);
+    margin-top: 20px;
+}
+
+.habitaciones-body{
+    margin-top: 20px;
+}
+
+.numero{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.tipo{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 4px;
+}
+.BotonEliminar{
+    background-color:#FFDEDE;
+    color:red;
+    border: 2px solid red;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.BotonAñadirHabitacion{
+    background-color:#D5F4D0;
+    color:#18690B;
+    border: 2px solid #18690B;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 20px;
+}
