@@ -1,35 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --PrimaryColor: hsl(137, 64%, 47%);
+    --HoverColor: hsl(137, 67%, 39%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyBg: hsl(0, 0%, 96%);
+    --greyText: hsl(190, 190, 190);
+    --InputColor: hsl(330, 12%, 97%);
+
+}
+ 
+*{
+    transition: none;
+}
+
+.recepcion{
+    padding: 1rem 3rem;
+}
+
 .flex{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     flex: wrap;
     margin-top: 10px;
-    margin-left: 10px;
 }
 
-.flex-1{
+.flex-uno{
     display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .card{
     width: 200px;
+    height: 150px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 10px 10px 15px -1px rgba(0,0,0,0.12);
+    margin-top: 20px;
+}
+
+.card-text{
+    color: var(--textColor);
 }
 
 .card-title{
     font-size: 35px;
-    margin-left: 50px;
 }
 
-.card-text{
-    margin-left: 40px;
+.aja{
+   text-align: center;
 }
 
 .logo-recepcion{
-    font-size: 50px;
+    font-size: 60px;
+    margin-left: 15px ;
+    margin-top: 10px;
+}
+
+.flex-1{
+    flex: 1;
+}
+
+.flex-2{
+    flex: 2;
+}
+
+.botonjij{
+    text-align: center;
 
 }
 
-.boton{
-    margin-left: 35px;
-    margin-top: 5px;
+.botonreserva{
+    background-color:#D5F4D0;
+    color:#18690B;
+    border: 2px solid #18690B;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 20px;
 }

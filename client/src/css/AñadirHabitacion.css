@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.input-group{
+    margin: 15px 0px;
+}
+
+.input-group input{
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.input-group label{
+    display: block;
+    margin: 5px 0px;
+}
+
+.botonA{
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid #18690B;
+    cursor: pointer;
+    background-color:#D5F4D0;
+    color:  #18690B;
+}

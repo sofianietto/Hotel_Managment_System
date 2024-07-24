@@ -16,27 +16,27 @@ const Recepcion = () => {
 
 
     return (
-        <div>
-            <h3>Entrada de hospedamiento</h3>
-            <hr />
+        <div className="recepcion">
+            <section>
+                <h1>Entrada de hospedamiento</h1>
+                <hr />
+            </section>
             <div className="flex">
                 {data.map((habitacion) => (
                     <div className="flex">
                         <div className="container">
                             <div className="card">
-                                <div className="card-body">
-                                    <div className="flex">
-                                        <div className="logo-recepcion">
-                                            <LuBedDouble />
-                                        </div>
-                                        <div className="aja">
-                                            <h5 className="card-title">{habitacion.numero}</h5>
-                                            <p className="card-text">{habitacion.tipo}</p>
-                                        </div>
+                                <div className="flex-uno">
+                                    <div className="logo-recepcion flex-1">
+                                        <LuBedDouble />
                                     </div>
-                                    <div className="boton">
-                                        <NavLink to="/reservas" className="btn btn-primary">Reservar</NavLink>
+                                    <div className="aja flex-2">
+                                        <h5 className="card-title">{habitacion.numero}</h5>
+                                        <p className="card-text">{habitacion.tipo}</p>
                                     </div>
+                                </div>
+                                <div className="botonjij">
+                                    <NavLink to="/reservas" className="botonreserva" >Reservar</NavLink>
                                 </div>
                             </div>
                         </div>

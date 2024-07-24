@@ -12,53 +12,36 @@
     --InputColor: hsl(330, 12%, 97%);
 
 }
- 
-.containeruno{
-    display: flex;
+
+table, th, td{
     padding: 1rem;
+    border-collapse: collapse;
 }
 
-.containerdos{
-    padding: 1rem;
+th, td {
+    border-bottom: 1px solid #ddd;
+  }
+
+table{
+    width: 100%;
+    text-align: center;
 }
 
-.tipo{
-    padding-left: 20px;
-}
-
-.containertres{
-    padding: 1rem;
-}
-
-.containermain{
-    display: flex;
-    flex-direction:row;
-    justify-content: space-between;
-    background-color: white;
-    border-radius: 63px 63px 63px 63px;
-    box-shadow: 10px 10px 46px 0px rgba(150,150,150,0.30);
-    margin-top: 20px;
-}
-
-.habitaciones-body{
-    margin-top: 20px;
+tr:hover {
+    background-color:var(--greyBg);
 }
 
 .numero{
-    font-size: 25px;
-    font-weight: 500;
+    color: var(--PrimaryColor);
+    font-weight: 600;
+    font-size: 20px;
 }
 
-.tipo{
-    font-size: 20px;
-    font-weight: 500;
-    margin-top: 4px;
-}
 .BotonEliminar{
     background-color:#FFDEDE;
     color:red;
     border: 2px solid red;
-    padding: 8px;
+    padding: 5px 10px;
     border-radius: 20px;
     font-size: 15px;
     font-weight: 500;
@@ -72,5 +55,13 @@
     border-radius: 20px;
     font-size: 15px;
     font-weight: 500;
-    margin-top: 20px;
+    
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }

@@ -1,10 +1,14 @@
 import useAxios from "../hooks/useAxios"
 import EliminarHabitacion from "./EliminarHabitacion"
 import Swal from 'sweetalert2'
-import Modal from "./Modal"
 import '../css/habitaciobes.css'
+import { useState } from "react"
+import Modal from "./Modal"
+import AñadirHabitacion from "./AñadirHabitacion"
 
 const ListaHabitaciones = () => {
+
+    const [showModal, setShowModal] = useState(false)
 
     const { data, isLoading, error, setData } = useAxios('http://localhost:8000/api/habitacion')
     if (error) {
@@ -27,35 +31,47 @@ const ListaHabitaciones = () => {
 
 
     return (
-        <div>
-            <main className="habitaciones">
-                <section className="habitaciones-header">
-                    <h1>Lista de Habitaciones</h1>
-                </section>
-
-                <div className="habitaciones-body">
-                    {data.map((habitacion) => (
-                        <div className="containermain">
-                            <div className="containeruno">
-                                <div className="numero">
-                                    <p>{habitacion.numero}</p>
-                                </div>
-                                <div className="tipo">
-                                    <p>{habitacion.tipo}</p>
-                                </div>
-                            </div>
-                            <div className="containerdos">
-                                <p>{habitacion.descripcion}</p>
-                            </div>
-                            <div className="containertres">
-                                <EliminarHabitacion habitacionId={habitacion._id} successCallback={successEliminar} />
-                            </div>
-                        </div>
-                    ))}
+        <>
+            <div>
+                <div className="row">
+                    <div>
+                        <h1>Lista de Habitaciones</h1>
+                    </div>
+                    <div>
+                        <button className="BotonAñadirHabitacion" onClick={() => setShowModal(true)}>Añadir Habitacion</button>
+                    </div>
                 </div>
-            </main>
-        </div>
+                <hr />
+                <table className="Table">
+                    <thead>
+                        <tr>
+                            <th>Número</th>
+                            <th>Tipo</th>
+                            <th>Descripcion</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {data.map((habitacion) => (
+                            <tr key={habitacion._id}>
+                                <td className="numero">{habitacion.numero}</td>
+                                <td>{habitacion.tipo}</td>
+                                <td>{habitacion.descripcion}</td>
+                                <td> <EliminarHabitacion habitacionId={habitacion._id} successCallback={successEliminar} /></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
 
+            </div>
+            <Modal
+                isVisible={showModal}
+                onClose={() => setShowModal(false)}
+                titulo="Añadir Habitación"
+            >
+                <AñadirHabitacion />
+            </Modal>
+        </>
     )
 }
 
