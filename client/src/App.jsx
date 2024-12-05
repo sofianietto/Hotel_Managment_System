@@ -8,12 +8,15 @@ import { useState } from 'react';
 import LandingPage from './LandingPage/LandingPage';
 import AñadirReserva from './componentes/AñadirReserva';
 import Clientes from './views/Clientes';
+import Login from './LoginPage/login';
 
 
 function App() {
   const userDetails = JSON.parse(localStorage.getItem("user"));
   const userInfo = userDetails ? userDetails : null;
   const [user, setUser] = useState(userInfo)
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [email, setEmail] = useState('')
 
   const setUserKeyValue = (clave, valor) => {
       setUser({ ...user, [clave]: valor })
@@ -28,6 +31,7 @@ function App() {
   return (
     <Routes>
       <Route path='/home' element={<LandingPage />} />
+      <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
       <Route path="/añadirreservas" element={<AñadirReserva />} />
       <Route path='/' element={<NavBar />}>
         <Route path="/clientes" element={<Clientes />} />

@@ -3,6 +3,7 @@ import './NavBar2.css'
 import { AiFillCloseCircle } from 'react-icons/ai'
 import { TbGridDots} from 'react-icons/tb'
 import { PiFlowerLotusFill } from 'react-icons/pi'
+import { NavLink } from 'react-router-dom'
 
 
 const NavBar2 = () => {
@@ -39,7 +40,7 @@ const NavBar2 = () => {
 
                         <div className="headerBtns flex">
                             <button className='btn loginBtn '>
-                                <a href="#" className='text-decoration-none'>Login</a>
+                                <NavLink href="/login" className='text-decoration-none'>Login</NavLink>
                             </button>
                             <button className='btn loginBtn'>
                                 <a href="#" className='text-decoration-none'>Registrarse</a>

@@ -3,6 +3,12 @@ const express = require("express");
 const cors = require('cors')
 const app = express();
 const cookieParser = require('cookie-parser'); 
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const adapter = new FileSync('./database.json')
+const db = low(adapter)
 
 app.use(cors())
 app.use( express.json() );
@@ -16,6 +22,11 @@ const corsOptions = {
     methods: 'GET, POST, PUT, PATCH, DELETE', // Allow these methods
 };
 app.use(cors(corsOptions));
+
+const jwtSecretKey = '12345678'
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 require("./config/mongoose.config");
 
